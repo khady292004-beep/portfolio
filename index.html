@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-600 via-gray-200 to-green-300 text-gray-800">
+  <div class="fixed inset-0 -z-10 pointer-events-none">
+  <div class="absolute top-20 left-10 w-2 h-2 bg-green-400 rounded-full opacity-60 animate-pulse"></div>
+  <div class="absolute top-1/3 right-20 w-2 h-2 bg-green-500 rounded-full opacity-60 animate-pulse"></div>
+  <div class="absolute bottom-32 left-1/4 w-2 h-2 bg-green-300 rounded-full opacity-60 animate-pulse"></div>
+  <div class="absolute bottom-20 right-1/3 w-2 h-2 bg-green-400 rounded-full opacity-60 animate-pulse"></div>
+</div>
+<header class="fixed top-0 w-full bg-gradient-to-r from-green-700 to-green-500 z-50">
+<nav class="max-w-6xl mx-auto flex justify-end gap-6 p-4 font-bold text-white animate-pulseSlow">
+<a href="#presentation">Présentation</a>
+<a href="#apropos">À propos</a>
+<a href="#formation">Formation</a>
+<a href="#competences">Compétences</a>
+<a href="#projets">Projets</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+<section id="presentation" class="relative min-h-screen flex items-center overflow-hidden justify-center">
+<script>
+  let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typing = document.getElementById("typing");
+function typeEffect() {
+  const current = words[index];
+  typing.textContent = current.substring(0, charIndex);
+  if(!isDeleting && charIndex < current.length) {
+    charIndex++;
+  } else if (isDeleting && charIndex > 0) {
+    charIndex--;
+  } else {
+    isDeleting = !isDeleting;
+    if (!isDeleting) index = (index + 1) % words.length;
+  }
+  setTimeout(typeEffect, isDeleting ? 60 : 120);
+}
+typeEffect();
+</script>
+ <img src="pre.jpg"
+     class="absolute inset-0 w-full h-full object-cover opacity-30 scale-110 animate-pulse">
+<div class="relative z-10 max-w-6xl mx-auto px-6  gap-15 items-center flex flex-col text-center">
+  <div class="animate-fadeInUp text-center md:text-center mx-auto md:mx-0">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-8 mx-auto">
+      Bonjour, je suis <span class="text-green-400">Racky Ndiaye</span>
+    </h1>
+   <h2 class="text-xl md:text-4xl font-medium text-green-500 mb-6">
+  Étudiante en G.Informatique 
+  <span class="text-white ">& Développeuse Frontend Junior</span> 
+</h2>
+    <div class="text-white text-xl space-y-2 max-w-4xl mx-auto md:mx-0 pt-8 text-center">
+      <p>
+       Passionnée par le développement web et les nouvelles technologies, 
+      j'ai obtenu mon baccalauréat en sciences expérimentales en 2023 
+      avant de me spécialiser dans la conception d'applications web modernes.
+      </p>
+      <p>
+        Je conçois et développe des interfaces dynamiques et responsives 
+        en utilisant HTML, CSS, Tailwind CSS, JavaScript, React et TypeScript. 
+        À travers mes projets, je mets l'accent sur la qualité du code,
+         la performance des applications et l'expérience utilisateur.
+      </p>
+      <p>
+        Mon objectif est de continuer à évoluer en tant que développeuse frontend 
+        et de contribuer à la création de solutions digitales innovantes et impactantes
+      </p>
+    </div>
+
+    <div class="mt-8">
+      <a href="#contact"
+         class="inline-block px-8 py-3 bg-green-500 text-gray-900 font-semibold rounded-full hover:scale-105 transition transform ">
+           Me contacter
+      </a>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+<section id="apropos" class="py-24 w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+<div class="animate-fade-in">
+<button class="mb-6 px-6 py-3 bg-green-500 text-green-300 rounded font-semibold animate-pulse hover:scale-110 transition duration-300">
+Ouverte aux opportunités
+</button>
+<p class="text-lg mb-10 font-bold">
+Développeuse Front-End junior, étudiante en Licence 2 Génie Informatique.
+Je conçois des sites web modernes avec HTML, Tailwind CSS et JavaScript en 
+mettant l'accent sur l'expérience utilisateur.
+</p>
+<ul class="grid grid-cols-2 gap-4">
+<li class="bg-green-400 text-white py-2 text-center rounded-lg hover:scale-105 transition">HTML</li>
+<li class="bg-green-400 text-white py-2 text-center rounded-lg hover:scale-105 transition">CSS</li>
+<li class="bg-green-400 text-white py-2 text-center rounded-lg hover:scale-105 transition">Tailwind CSS</li>
+<li class="bg-green-400 text-white py-2 text-center rounded-lg hover:scale-105 transition">JavaScript</li>
+<li class="bg-green-400 text-white py-2 text-center rounded-lg hover:scale-105 transition">Git & GitHub</li>
+<li class="bg-green-400 text-white py-2 text-center rounded-lg hover:scale-105 transition">Java</li>
+</ul>
+</div>
+<div class="relative w-full h-[620px] md:h-[480px] flex justify-end animate-float">
+  <div class="w-[100%] h-full overflow-hidden rounded-l-full shadow-xl">
+    <img src="photo portfolio.jpg" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110 hover:rotate-1">
+  </div>
+</div>
+</section>
+<section id="formation" class="py-32 text-center">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+<article class="bg-gray-800 p-6 rounded-xl animate-fadeInUp hover:scale-105 transition">
+<h3 class="text-xl font-bold text-green-400">
+Licence Génie Informatique
+</h3>
+<p class="text-sm text-green-300">L2-En cours</p>
+<p class="text-sm text-green-400">A Univers Professionnelle</p>
+<button id="openGI" class="mt-4 bg-green-500 text-black px-4 py-2 rounded animate-bounce">
+Voir détails
+</button>
+</article>
+<dialog id="dialogGI" class="rounded-xl p-6 bg-gray-900 text-gray-200 w-full max-w-2xl">
+<div class="flex justify-between items-start border-b border-gray-700 pb-4">
+<div>
+<h3 class="text-2xl font-bold text-white">
+Licence Génie Informatique
+</h3>
+<p class="text-green-400 font-medium">L2-En cours</p>
+</div>
+<button id="closeGI" class="text-gray-400 text-xl">✕</button>
+</div>
+<div class="mt-6">
+<p>
+Le génie informatique est une formation orientée vers la conception,<br>
+le développement et la maintenance de systèmes informatiques.Elle couvre<br>
+les bases de la programmation, l'algorithmique, les structures de données,<br>
+les bases de données, ainsi que le développement d'applications web et logicielles.<br>
+La formation met également l'accent sur les systèmes d'exploitation, les réseaux<br>
+informatiques et les bonnes pratiques de l'ingénierie logicielle à travers des projets pratiques.
+</p>
+</div>
+</dialog>
+<article class="bg-gray-800 p-6 rounded-xl animate-fadeInUp hover:scale-105 transition">
+<h3 class="text-xl font-bold text-green-400">
+Licence Physique Chimie
+</h3>
+<p class="text-sm text-gray-300">L1-En cours</p>
+<p class="text-sm text-gray-400">A L'universite Cheikh Anta Diop</p>
+<button id="open1" class="mt-4 bg-green-500 text-black px-4 py-2 rounded animate-bounce">
+Voir détails
+</button>
+</article>
+<dialog id="dialog1" class="rounded-xl p-6 bg-gray-900 text-gray-200 w-full max-w-2xl">
+<div class="flex justify-between items-start border-b border-gray-700 pb-4">
+<div>
+<h3 class="text-2xl font-bold text-white">
+Licence Physique Chimie
+</h3>
+<p class="text-green-400 font-medium">L1-En cours</p>
+</div>
+<button id="close1" class="text-gray-400 text-xl animate-bounce">✕</button>
+</div>
+<div class="mt-6">
+<p>
+La formation en Physique-Chimie relève du domaine des sciences fondamentales.<br>
+Elle porte sur l'étude des phénomènes physiques et chimiques, en abordant les<br>
+lois fondamentales de la matière, de l'énergie et des réactions chimiques.<br>
+Cette formation développe des compétences en analyse, raisonnement scientifique<br>
+et résolution de problèmes, à travers des travaux théoriques et pratiques.
+</p>
+</div>
+</dialog>
+<script>
+const openGI=document.getElementById("openGI")
+const closeGI=document.getElementById("closeGI")
+const dialogGI=document.getElementById("dialogGI")
+openGI.onclick=()=>dialogGI.showModal()
+closeGI.onclick=()=>dialogGI.close()
+const open1=document.getElementById("open1")
+const close1=document.getElementById("close1")
+const dialog1=document.getElementById("dialog1")
+open1.onclick=()=>dialog1.showModal()
+close1.onclick=()=>dialog1.close()
+</script>
+</div>
+</section>
+<section id="projets" class="py-24 bg-gradient-to-br from-green-300 via-gray-200 to-green-300 px-6">
+<div class="max-w-6xl mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-0">
+<div class="project-card  w-full opacity-0 translate-y-10 transition-all duration-700 bg-gradient-to-br from-green-300 via-gray-200 to-green-300  rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl flex flex-col">
+<img src="racky.jpg" class="w-full h-44 object-cover">
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-semibold mb-2 text-gray-800">Site E-commerce / En Cours</h3>
+<p class="text-sm text-gray-500 mb-4">HTML · Css</p>
+<a href="https://khady292004-beep.github.io/ecommerce/" target="_blank"
+class="mt-auto inline-block text-center px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded hover:bg-green-700 transition">
+Voir le projet
+</a>
+</div>
+</div>
+<div class="project-card opacity-0 translate-y-10 transition-all duration-700 delay-100  bg-gradient-to-br from-green-300 via-gray-200 to-green-300  rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl flex flex-col">
+<img src="img/projet2.png" class="w-full h-48 object-cover sm:h-52 md:h-56 ">
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-semibold mb-2 text-gray-800">Portfolio Personnel</h3>
+<p class="text-sm text-gray-500 mb-4">HTML · Tailwind</p>
+<a href="#" class="mt-auto inline-block text-center px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded hover:bg-green-700 transition w-full sm:w-auto">
+Voir le projet
+</a>
+</div>
+</div>
+<div class="project-card opacity-0 translate-y-10 transition-all duration-700 delay-200 bg-gradient-to-br from-green-300 via-gray-200 to-green-300  rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl flex flex-col">
+<img src="cal.jpg" class="w-full h-44 object-cover">
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-semibold mb-2 text-gray-800">Projet Académique</h3>
+<p class="text-sm text-gray-500 mb-4">JavaScript</p>
+<a href="https://khady292004-beep.github.io/ma-calculatrice/"
+class="mt-auto inline-block text-center px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded hover:bg-green-700 transition">
+Voir le projet
+</a>
+</div>
+</div>
+<div class="project-card opacity-0 translate-y-10 transition-all duration-700 delay-300  bg-gradient-to-br from-green-300 via-gray-200 to-green-300  rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl flex flex-col">
+<img src="img2.jpg" class="w-full h-44 object-cover">
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-xl font-semibold mb-2 text-gray-800">Projet Académique</h3>
+<p class="text-sm text-gray-500 mb-4">Html/Css</p>
+<a href="https://khady292004-beep.github.io/projet2/"
+class="mt-auto inline-block text-center px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded hover:bg-green-700 transition">
+Voir le projet
+</a>
+</div>
+</div>
+<script>
+const cards=document.querySelectorAll('.project-card');
+const observer=new IntersectionObserver(entries=>{ 
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.remove('opacity-0','translate-y-10');
+}
+});
+},{threshold:0.2});
+cards.forEach(card=>observer.observe(card));
+</script>
+</div>
+</div>
+</section>
+<section id="competences" class="py-12 bg-gradient-to-br from-green-300 via-gray-200 to-green-200 sm:py-16 lg:py-20">
+<div class="max-w-6xl mx-auto px-6">
+<h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800 md:text-4xl">
+Compétences & <span class="text-gray-700">Expérience professionnelle</span>
+</h2>
+<div class="flex justify-center gap-4 mb-12">
+<button onclick="showSkills()" id="btnSkills" class="px-6 py-2 rounded-full   text-white font-semibold transition hover:scale-105">
+Compétences
+</button>
+<button onclick="showExperience()" id="btnExperience" class="px-6 py-2 rounded-full border border-gray-800 text-gray-800 transition hover:scale-105">
+Expérience professionnelle
+</button>
+</div>
+<div id="skillsContent" class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-10 transition-all duration-700 opacity-100 scale-100">
+<div class="bg-gradient-to-br from-green-600 via-gray-200 to-green-300 p-6 rounded-xl shadow-lg animate-fadeInUp">
+<h3 class="text-xl font-semibold mb-6 text-gray-700">Domaines de compétences</h3>
+<ul class="space-y-4 text-lg text-gray-700">
+<li><span class="font-semibold">Langages :</span> Java, Python, JavaScript, TypeScript</li>
+<li><span class="font-semibold">Web :</span> HTML, CSS, Tailwind CSS</li>
+<li><span class="font-semibold">Backend :</span> Node.js</li>
+<li><span class="font-semibold">Outils :</span> Git, GitHub, VS Code</li>
+</ul>
+</div>
+<div class="bg-gradient-to-br from-green-600 via-gray-200 to-green-300 p-6 rounded-xl shadow-lg animate-fadeInUp ">
+<h3 class="text-xl font-semibold mb-6 text-gray-800">Niveau de maîtrise</h3>
+<div class="space-y-5">
+<div>
+<p>Java</p>
+<div class="w-full bg-gray-300 rounded-full h-3">
+<div class="bg-gray-800 h-3 rounded-full w-4/5 animate-bounceSlow"></div>
+</div>
+<span class="text-sm text-gray-600">Avancé</span>
+</div>
+<div>
+<p>JavaScript</p>
+<div class="w-full bg-gray-300 rounded-full h-3">
+<div class="bg-gray-800 h-3 rounded-full w-3/5 animate-bounceSlow"></div>
+</div>
+<span class="text-sm text-gray-600">Intermédiaire</span>
+</div>
+<div>
+<p>Python</p>
+<div class="w-full bg-gray-300 rounded-full h-3">
+<div class="bg-gray-800 h-3 rounded-full w-3/5 animate-bounceSlow"></div>
+</div>
+<span class="text-sm text-gray-600">Intermédiaire</span>
+</div>
+<div>
+<p>HTML / CSS</p>
+<div class="w-full bg-gray-300 rounded-full h-3">
+<div class="bg-gray-800 h-3 rounded-full w-4/5 animate-bounceSlow"></div>
+</div>
+<span class="text-sm text-gray-600">Avancé</span>
+</div>
+</div>
+</div>
+</div>
+<div id="experienceContent" class="hidden max-w-4xl mx-auto bg-gradient-to-br from-green-600 via-gray-200 to-green-300 p-8 rounded-xl shadow-lg transition-all duration-700 opacity-0 scale-95">
+<p class="text-lg mb-6 text-center text-gray-700">
+Lors de mon stage A (TGI) situé à HLM GRAND YOFF, j'ai effectué la maintenance informatique,
+le câblage réseau, la création de flyers avec Photoshop et la gestion de sites WordPress. 
+Cette expérience a renforcé mes compétences techniques et mon sens de l'organisation.
+</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<img src="m.jpg" class="rounded-lg hover:scale-105 transition">
+<img src="r.jpg" class="rounded-lg hover:scale-105 transition">
+<img src="rms.jpg" class="rounded-lg hover:scale-105 transition">
+<img src="p.jpg" class="rounded-lg hover:scale-105 transition">
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-32 bg-gray-900">
+<div class="max-w-6xl mx-auto px-6">
+<script>
+function showSkills(){
+let s=document.getElementById("skillsContent")
+let e=document.getElementById("experienceContent")
+s.classList.remove("hidden","opacity-0","scale-95")
+s.classList.add("opacity-100","scale-100")
+e.classList.add("hidden","opacity-0","scale-95")
+document.getElementById("btnSkills").classList.add("bg-gray-800","text-white")
+document.getElementById("btnExperience").classList.remove("bg-gray-800","text-white")
+}
+function showExperience(){
+let s=document.getElementById("skillsContent")
+let e=document.getElementById("experienceContent")
+s.classList.add("hidden","opacity-0","scale-95")
+e.classList.remove("hidden","opacity-0","scale-95")
+e.classList.add("opacity-100","scale-100")
+document.getElementById("btnExperience").classList.add("bg-gray-800","text-white")
+document.getElementById("btnSkills").classList.remove("bg-gray-800","text-white")
+}
+</script>
+<section id="contact" class="py-6 bg-gray-900">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16 animate-bounce">
+<a href="#contact" class="inline-block px-8 py-3 border-2 border-green-500 text-green-400 font-semibold rounded-full hover:bg-green-500 hover:text-white transition transform hover:scale-110">
+Contactez-moi
+</a>
+</div>
+<div class="flex items-center mb-16 animate-pulse">
+<div class="w-10 h-1 bg-green-400 mr-4"></div>
+<h2 class="text-3xl md:text-4xl font-bold">
+<span class="text-green-400 animate-bounce inline-block">Ensemble, réalisons</span>
+<span class="text-white animate-bounce inline-block"> de grandes choses</span>
+</h2>
+</div>
+<div class="mb-12 animate-pulse">
+<h2 class="text-3xl font-bold text-white mb-2">Comment me joindre</h2>
+<p class="text-gray-400">
+Voici les différentes façons de me contacter selon votre besoin.
+</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 mb-16">
+<div class="bg-gray-800 p-6 rounded-xl  hover:scale-110 transition transform">
+<h3 class="text-xl font-semibold text-white mb-3">Contact rapide</h3>
+<p class="text-gray-400 mb-4">
+WhatsApp est le moyen le plus rapide.
+Pour les demandes détaillées, utilisez l'email.
+</p>
+<div class="space-y-3">
+<a href="#" class="block bg-green-600 py-2 rounded-lg text-center text-white animate-pulse">
+WhatsApp
+</a>
+<a href="#" class="block bg-gray-700 py-2 rounded-lg text-center text-white animate-pulse">
+Email
+</a>
+</div>
+</div>
+<div class="bg-gray-800 p-6 rounded-xl  hover:scale-110 transition transform">
+<h3 class="text-xl font-semibold text-white mb-3">Mes espaces en ligne</h3>
+<p class="text-gray-400 mb-4">
+Consultez mes projets et mon parcours.
+</p>
+<div class="grid grid-cols-2 gap-3">
+<a class="bg-green-700 py-2 rounded-lg text-center text-white ">GitHub</a>
+<a class="bg-green-700 py-2 rounded-lg text-center text-white ">LinkedIn</a>
+<a class="bg-green-700 py-2 rounded-lg text-center text-white">Instagram</a>
+<a class="bg-green-700 py-2 rounded-lg text-center text-white ">Facebook</a>
+</div>
+</div>
+<div class="bg-gray-800 p-6 rounded-xl  hover:scale-110 transition transform">
+<h3 class="text-xl font-semibold text-white mb-3">Délai de réponse</h3>
+<p class="text-gray-400">
+Je réponds généralement sous 24 heures.
+Pour les projets urgents, WhatsApp est recommandé.
+</p>
+</div>
+</div>
+<div class="bg-gray-800 p-8 rounded-xl ">
+<h3 class="text-2xl font-semibold text-white mb-2">
+Parlez-moi de votre projet
+</h3>
+<p class="text-gray-400 mb-6">
+Expliquez brièvement votre besoin afin que je puisse vous répondre efficacement.
+</p>
+<form class="grid md:grid-cols-2 gap-6">
+<input type="text" placeholder="Votre nom" class="bg-gray-700 p-3 rounded-lg text-white outline-none">
+<input type="email" placeholder="Votre email" class="bg-gray-700 p-3 rounded-lg text-white outline-none">
+<select class="bg-gray-700 p-3 rounded-lg text-white outline-none md:col-span-2">
+<option>Type de projet</option>
+<option>Projet académique</option>
+<option>Collaboration</option>
+<option>Question technique</option>
+</select>
+<textarea rows="4" placeholder="Décrivez votre projet" class="bg-gray-700 p-3 rounded-lg text-white outline-none md:col-span-2"></textarea>
+<button class="bg-green-600 py-3 rounded-lg text-white md:col-span-2 animate-bounce">
+Envoyer le message
+</button>
+</form>
+</div>
+</div>
+<footer class="bg-gray-900 text-gray-300 py-8 mt-6">
+  <div class="max-w-6xl mx-auto px-4  text-center">
+  
+    <p class="mb-6 text-gray-400">
+      Développeuse Front-End junior/Etudiante L2  passionnée par la création d'interfaces modernes et intuitives.
+    </p>
+    <div class="flex justify-center space-x-3 mb-8">
+      <a href="https://www.linkedin.com/in/racky-ndiaye-93a853358" class="hover:text-green-400 transition">
+        LinkedIn
+      </a>
+      <a href="https://github.com/khady292004-beep/" class="hover:text-green-400 transition">
+        GitHub
+      </a>
+      <a href="#" class="hover:text-green-400 transition">
+        Instagram
+      </a>
+    </div>
+    <p class="text-sm text-gray-500 animate-bounce">
+      © 2026 Racky Ndiaye. Portfolio Personnel.
+    </p>
+  </div>
+</section>
+</footer>
+<div class="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
+  <a href="https://wa.me/221782792618 " target="_blank"
+     class="w-12 h-12 bg-green-500 text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition">
+    W
+  </a>
+  <a href="https://www.linkedin.com/in/racky-ndiaye-93a853358" target="_blank"
+     class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition">
+    in
+  </a>
+  <a href="mailto:tonmail@gmail.com"
+     class="w-12 h-12 bg-gray-800 text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition">
+    @
+    <a href="https://github.com/khady292004-beep/" target="_blank"
+     class="w-12 h-12 bg-green-500 text-white flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition">
+    G
+  </a>
+</div>
+</body>
+</html>
